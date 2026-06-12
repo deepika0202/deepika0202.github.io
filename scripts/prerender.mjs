@@ -28,14 +28,6 @@ function fail(message) {
   process.exit(1)
 }
 
-function escapeAttr(value) {
-  return value.replaceAll('&', '&amp;').replaceAll('"', '&quot;')
-}
-
-function escapeText(value) {
-  return value.replaceAll('&', '&amp;').replaceAll('<', '&lt;')
-}
-
 function injectRoot(html, appHtml) {
   const rootRe = /<div id="root">\s*<\/div>/
   if (!rootRe.test(html)) {

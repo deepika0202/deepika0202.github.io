@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router'
 import { useState, useEffect } from 'react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, XMarkIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline'
 
 export default function Navbar() {
   const location = useLocation()
@@ -20,10 +20,11 @@ export default function Navbar() {
   }, [])
 
   const navigation = [
-    { name: 'Home', href: '/' },
+    { name: 'Experience', href: '/#experience' },
+    { name: 'Skills', href: '/#skills' },
+    { name: 'Projects', href: '/#projects' },
+    { name: 'Contact', href: '/#contact' },
   ]
-
-  const isActive = (path) => location.pathname === path
 
   return (
     <nav className={`sticky top-0 z-50 transition-all duration-300 ${
@@ -42,25 +43,21 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
             {navigation.map((item) => (
-              <Link
+              <a
                 key={item.name}
-                to={item.href}
-                className={`inline-flex min-h-11 items-center px-4 rounded-lg text-sm font-medium transition-colors duration-200 ${
-                  isActive(item.href)
-                    ? 'bg-blue-500/10 text-blue-400'
-                    : 'text-slate-300 hover:text-white hover:bg-white/5'
-                }`}
+                href={item.href}
+                className="inline-flex min-h-11 items-center px-4 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors duration-200"
               >
                 {item.name}
-              </Link>
+              </a>
             ))}
             <a
-              href="https://www.linkedin.com/in/deepika-chaturvedi"
+              href="/Deepika_Chaturvedi_Resume.pdf"
+              download="Deepika_Chaturvedi_Resume.pdf"
               className="ml-3 inline-flex min-h-11 items-center px-4 rounded-lg bg-blue-500/10 border border-blue-500/30 text-blue-400 text-sm font-medium hover:bg-blue-500/20 hover:border-blue-500/50 transition-colors duration-200"
-              target="_blank"
-              rel="noopener noreferrer"
             >
-              LinkedIn
+              <ArrowDownTrayIcon className="w-4 h-4 mr-2" aria-hidden="true" />
+              Resume
             </a>
           </div>
 
@@ -84,27 +81,22 @@ export default function Navbar() {
           <div className="md:hidden">
             <div className="pb-4 pt-2 space-y-1">
               {navigation.map((item) => (
-                <Link
+                <a
                   key={item.name}
-                  to={item.href}
+                  href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors duration-200 ${
-                    isActive(item.href)
-                      ? 'bg-blue-500/10 text-blue-400'
-                      : 'text-slate-300 hover:text-white hover:bg-white/5'
-                  }`}
+                  className="block px-4 py-3 rounded-lg text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors duration-200"
                 >
                   {item.name}
-                </Link>
+                </a>
               ))}
               <a
-                href="https://www.linkedin.com/in/deepika-chaturvedi"
+                href="/Deepika_Chaturvedi_Resume.pdf"
+                download="Deepika_Chaturvedi_Resume.pdf"
                 className="block px-4 py-3 rounded-lg text-base font-medium text-blue-400 hover:bg-blue-500/10 transition-colors duration-200"
-                target="_blank"
-                rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
               >
-                LinkedIn
+                Download Resume
               </a>
             </div>
           </div>
