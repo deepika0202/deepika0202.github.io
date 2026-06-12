@@ -33,7 +33,7 @@ prerenders `/` to static HTML and copies everything to the repo root — committ
   - `index.css` — Tailwind + custom CSS
 - `public/` — Static assets copied as-is
   - `favicon.svg`, `robots.txt`, `sitemap.xml`, `404.html`
-  - `cv.pdf` — Resume file
+  - `Deepika_Chaturvedi_Resume.pdf` — Resume file
   - `images/` — Portfolio images
 - `scripts/prerender.mjs` — Build-time SSR renderer
 - `vite.config.js`, `tailwind.config.js`, `postcss.config.js` — Config files
