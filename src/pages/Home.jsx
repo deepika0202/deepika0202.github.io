@@ -117,7 +117,7 @@ export default function Home() {
                 </span>
                 <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm font-semibold">
                   <span className="w-2 h-2 bg-emerald-400 rounded-full mr-2 pulse-dot"></span>
-                  Open to new roles
+                  Open to full-time roles
                 </span>
               </div>
 
