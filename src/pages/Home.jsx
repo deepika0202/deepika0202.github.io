@@ -189,7 +189,7 @@ export default function Home() {
                   </div>
                 ) : (
                   <img
-                    src="/images/deepika_port.jpg"
+                    src="/images/deepika_portfolio.jpg"
                     alt="Deepika Chaturvedi, Java Backend Engineer"
                     width="320"
                     height="320"
